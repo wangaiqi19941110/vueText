@@ -3,7 +3,168 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
 	</head>
 	<body>
+		<div id="app">
+			<span>{{mes}}</span>
+			<button v-on:click="reverse()">反转</button>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					mes:"wangaiqi"
+				},
+				methods:{
+					reverse:function() {
+						this.mes = this.mes.split("").reverse().join("");
+					}
+				}
+			})
+		</script>
 	</body>
 </html>
+<!--
+	1声明式渲染
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span>{{mes}}</span>
+		</div>
+		<script>
+			var vuetext = new Vue({
+				el:"#app",
+				data:{
+					mes:"ppp"
+				}
+			})
+		</script>
+	</body>
+</html>
+	2属性
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span v-bind:title="mes">ss</span>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					mes:"ppppp"
+				}
+			})
+		</script>
+	</body>
+</html>
+	3条件与循环
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span v-if="no">ppppp</span>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					no:true
+				}
+			})
+		</script>
+	</body>
+</html>
+	4循环
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="me in mes">{{me}}</li>
+			</ul>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					mes:["ppp","oo","ll"]
+				}
+			})
+		</script>
+	</body>
+</html>
+	5处理用户输入
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="mes"/>
+			<span>{{mes}}</span>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					mes:"1"
+				}
+			})
+		</script>
+	</body>
+</html>
+	6点击事件
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基础</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span>{{mes}}</span>
+			<button v-on:click="reverse()">反转</button>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					mes:"wangaiqi"
+				},
+				methods:{
+					reverse:function() {
+						this.mes = this.mes.split("").reverse().join("");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
+-->

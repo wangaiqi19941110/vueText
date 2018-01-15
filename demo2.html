@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child v-for="item in list" v-bind:todo="item"></child>
+		</div>
+		<script>
+			Vue.component('child',{
+				props:["todo"],
+				template:'<li>{{todo.id}}----------{{todo.name}}</li>'
+			});
+			new Vue({
+				el:"#app",
+				data:{
+					list:[{"name":"wangaiqi","id":1},{"name":"shenqihang","id":2},{"name":"zhangsan","id":2}]
+				}
+			});
+		</script>
+	</body>
+</html>
+<!--
+	1组件注册
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child></child>
+		</div>
+		<script>
+			Vue.component('child',{
+				template:'<li>alllllalala</li>'
+			});
+			new Vue({
+				el:"#app"
+			});
+		</script>
+	</body>
+</html>
+	2新增prop属性(1)
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child v-for="item in list" v-bind:todo="item"></child>
+		</div>
+		<script>
+			Vue.component('child',{
+				props:["todo"],
+				template:'<li>{{todo.name}}</li>'
+			});
+			new Vue({
+				el:"#app",
+				data:{
+					list:[{"name":"wangaiqi"},{"name":"shenqihang"},{"name":"zhangsan"}]
+				}
+			});
+		</script>
+	</body>
+</html>
+2新增prop属性(2)
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<child v-for="item in list" v-bind:todo="item"></child>
+		</div>
+		<script>
+			Vue.component('child',{
+				props:["todo"],
+				template:'<li>{{todo.id}}----------{{todo.name}}</li>'
+			});
+			new Vue({
+				el:"#app",
+				data:{
+					list:[{"name":"wangaiqi","id":1},{"name":"shenqihang","id":2},{"name":"zhangsan","id":2}]
+				}
+			});
+		</script>
+	</body>
+</html>
+
+-->
