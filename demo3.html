@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据与方法</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+		  <p>{{foo}}</p>
+		  <button v-on:click="foo ='baz'">Change it</button>
+		</div>
+		<script>
+			var obj = {
+			  foo: 'bar'
+			};
+			
+		//	Object.freeze(obj);
+			
+			var vm = new Vue({
+			    el: '#app',
+				data:obj
+			});
+			console.log(vm.$data);
+			console.log(vm.$el);
+		</script>
+	</body>
+</html>
+<!--
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据与方法</title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<span>{{message}}</span>
+		</div>
+		<script>
+			var mess = {
+				message:"wangaiqi"
+			};
+			var app = new Vue({
+				el:"#app",
+				data:mess
+			});
+			//app.message="shenqihang";
+		mess.message="11"
+			
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据与方法</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+		  <p>{{obj.foo}}</p>
+		  <button v-on:click="obj.foo ='baz'">Change it</button>
+		</div>
+		<script>
+			var obj = {
+			  foo: 'bar'
+			};
+			
+			Object.freeze(obj);
+			
+			new Vue({
+			  el: '#app',
+			  data () {
+			    return {
+			      obj
+			    }
+			  }
+			});
+					
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据与方法</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+		  <p>{{foo}}</p>
+		  <button v-on:click="foo ='baz'">Change it</button>
+		</div>
+		<script>
+			var obj = {
+			  foo: 'bar'
+			};
+			
+		//	Object.freeze(obj);
+			
+			new Vue({
+			  el: '#app',
+//			  data:function() {
+//			  	return obj
+//			  }
+				data(){
+					return obj
+				}
+			});
+					
+		</script>
+	</body>
+</html>
+-->
